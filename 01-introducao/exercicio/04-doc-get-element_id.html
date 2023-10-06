@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribuindo valor em uma Tag HTML por ID</title>
+</head>
+<body>
+    <p id="txt01">Testo no Paragrafo</p>
+    <script>
+        document.write("<h1>Sistema em Java Script</h1>");
+        document.getElementById("txt01").textContent = 'Atribuindo o texto ao parágrafo com getElementByID';
+        document.getElementById("txt01").style.color = "blue";
+        document.getElementById("txt01").style.fontWeight = "bold";
+    </script>
+    
+</body>
+</html>
