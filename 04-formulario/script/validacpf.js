@@ -23,9 +23,9 @@ function validaCPF(vrCPF) {
     soma += parseInt(vrCPF.charAt(7)) * 3;
     soma += parseInt(vrCPF.charAt(8)) * 2;
 
-    let digitoX = soma % 11;
+    let digitoX = soma%11;
     digitoX = 11 - digitoX;
-    if (digitoX > 10) {
+    if (digitoX >= 10) {
         digitoX = 0;
     }
 
@@ -34,6 +34,21 @@ function validaCPF(vrCPF) {
         digitoValido = false;
     }
 
+    soma = 0;
+    for( let posicao = 0, pesoY = 11; posicao < 10; posicao++, pesoY--){
+        soma += parseInt( vrCPF.charAt(posicao) ) * pesoY;
+    }
+
+    // let digitoY = soma%11;
+    // digitoY = 11-digitoY;
+    let digitoY = 11-(soma%11);
+    if (digitoY >= 10) {
+        digitoY = 0;
+    }
+    if (digitoY !== parseInt(vrCPF.charAt(10))) {
+        digitoValido = false;
+    }
+    
     return digitoValido;
     //return vrCPF.length === 11 & !isNaN(vrCPF);
 }
